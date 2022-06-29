@@ -1,3 +1,13 @@
-{{!-- views/users/user-profile.hbs --}}
-
-<p>La pagina de perfil ma frend!</p>
+{{!-- si es el usuario
+ pal perfil y sino no te logeo --}}
+{{#if userInSession}}
+    <h2>Welcome, {{ userInSession.username }}!</h2>
+    <p>This is your profile page my friend!</p>
+    <button>
+        <a href="/userProfile">Reload the page</a>
+  {{!-- este boton es una locura para ver si
+  sigues logeado y magias varias de las cookies --}}
+    </button>
+{{else}}
+    <p>Still no logged in user, sorry!</p>
+{{/if}}
